@@ -7,25 +7,14 @@ pipeline {
                 echo "Building Phase of CICD"
             }
         }
-        stage('Test') {
+        stage('DeployToStaging') {
             steps {
-                echo "Testing Phase of CICD"
+                echo "Deploying to Staging Phase of CICD"
             }
         }
-       stage('cat README') {
-            when {
-                branch "film-*"
-           }
-           steps {
-             sh '''
-               cat README.md
-               '''
-            }
-        }
-
-        stage('Deploy') {
+        stage('DeployToProduction') {
             steps {
-                echo "Deploying Phase of CICD"
+                echo "Deploying to production Phase of CICD"
             }
         }
     }
