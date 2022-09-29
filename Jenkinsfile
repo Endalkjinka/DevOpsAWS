@@ -12,16 +12,6 @@ pipeline {
                 echo "Testing Phase of CICD"
             }
         }
-       stage('cat README') {
-            when {
-                branch "film-*"
-           }
-           steps {
-             sh '''
-               cat README.md
-               '''
-            }
-        }
 
         stage('Deploy') {
             steps {
